@@ -44,17 +44,22 @@
 
 				<!-- Banner -->
 					<section id="banner">
-						<div class="inner">
+						<div class="outer" style="width: 100%; height: 100%; position: relative;">
+							<div class="background" style="position: absolute; top: 0; left: 0;">
+									<script>
+											var obj = document.createElement('object');
+											obj.type = 'text/html';
+											obj.data = 'animation/index.html';
+											document.getElementById('banner').appendChild(obj);
+										</script>
+							</div>
+						
+						<div class="inner" style="height: 100%; position: absolute; top: 0; left: 0; padding-left: 18%;">
 							<div class="logo"><span class="icon fa-diamond"></span></div>
 						<!-- Animation Script -->
-						<!--
-							<script>
-									document.getElementById("banner").innerHTML=
-									'<object type="text/html" data="animation/index.html" ></object>';
-								</script>
-							-->
 							<h2>Roshan Raj Mishra</h2>
 							<p>Full-Stack Web Developer</p>
+							</div>
 						</div>
 					</section>
 
