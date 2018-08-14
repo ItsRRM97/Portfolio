@@ -1,5 +1,5 @@
 ///
-/// Solid State by Pixelarity
+/// Forty by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -10,32 +10,63 @@
 		margin: 0 0 _size(element-margin) 0;
 
 		.field {
-			margin: 0 0 _size(element-margin) 0;
+			margin: 0 0 (_size(element-margin) * 1) 0;
 
-			label {
-				margin-top: _size(element-margin) * -0.75;
-			}
+			&.half {
+				width: 50%;
+				float: left;
+				padding: 0 0 0 (_size(element-margin) * 1 * 0.5);
 
-			&:first-child {
-				label {
-					margin-top: 0;
+				&.first {
+					padding: 0 (_size(element-margin) * 1 * 0.5) 0 0;
 				}
 			}
 		}
 
-		> :last-child {
-			margin-bottom: 0;
+		> .actions {
+			margin: (_size(element-margin) * 1.25) 0 0 0 !important;
+		}
+
+		@include breakpoint(small) {
+			.field {
+				margin: 0 0 (_size(element-margin) * 0.75) 0;
+
+				&.half {
+					padding: 0 0 0 (_size(element-margin) * 0.75 * 0.5);
+
+					&.first {
+						padding: 0 (_size(element-margin) * 0.75 * 0.5) 0 0;
+					}
+				}
+			}
+
+			> .actions {
+				margin: (_size(element-margin) * 1) 0 0 0 !important;
+			}
+		}
+
+		@include breakpoint(xsmall) {
+			.field {
+				&.half {
+					width: 100%;
+					float: none;
+					padding: 0;
+
+					&.first {
+						padding: 0;
+					}
+				}
+			}
 		}
 	}
 
 	label {
 		color: _palette(fg-bold);
 		display: block;
-		font-family: _font(family-heading);
 		font-size: 0.8em;
-		font-weight: _font(weight-heading-bold);
-		letter-spacing: _font(kern-heading);
-		margin: 0 0 (_size(element-margin) * 0.35) 0;
+		font-weight: _font(weight-bold);
+		letter-spacing: _font(letter-spacing-alt);
+		margin: 0 0 (_size(element-margin) * 0.5) 0;
 		text-transform: uppercase;
 	}
 
@@ -43,13 +74,14 @@
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
+	input[type="search"],
+	input[type="url"],
 	select,
 	textarea {
 		@include vendor('appearance', 'none');
 		background: _palette(border-bg);
-		border-radius: _size(border-radius);
 		border: none;
-		border: solid 2px _palette(border);
+		border-radius: 0;
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -62,7 +94,8 @@
 		}
 
 		&:focus {
-			border-color: desaturate(lighten(_palette(accent), 6), 3);
+			border-color: _palette(highlight);
+			box-shadow: 0 0 0 2px _palette(highlight);
 		}
 	}
 
@@ -90,16 +123,12 @@
 		}
 	}
 
-	select {
-		option {
-			color: _palette(fg-bold);
-			background: _palette(bg);
-		}
-	}
-
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="tel"],
+	input[type="search"],
+	input[type="url"],
 	select {
 		height: _size(element-height);
 	}
@@ -123,23 +152,18 @@
 			color: _palette(fg);
 			cursor: pointer;
 			display: inline-block;
-			font-size: 1em;
-			font-family: _font(family);
-			text-transform: none;
-			letter-spacing: 0;
 			font-weight: _font(weight);
-			padding-left: (_size(element-height) * 0.6) + 0.75em;
+			padding-left: (_size(element-height) * 0.6) + 1em;
 			padding-right: 0.75em;
 			position: relative;
 
 			&:before {
 				background: _palette(border-bg);
-				border-radius: _size(border-radius);
-				border: solid 2px _palette(border);
 				content: '';
 				display: inline-block;
 				height: (_size(element-height) * 0.6);
 				left: 0;
+				letter-spacing: 0;
 				line-height: (_size(element-height) * 0.575);
 				position: absolute;
 				text-align: center;
@@ -151,7 +175,7 @@
 		&:checked + label {
 			&:before {
 				background: _palette(fg-bold);
-				border-color: _palette(fg-bold);
+				border-color: _palette(highlight);
 				content: '\f00c';
 				color: _palette(bg);
 			}
@@ -159,7 +183,7 @@
 
 		&:focus + label {
 			&:before {
-				border-color: _palette(accent);
+				box-shadow: 0 0 0 2px _palette(highlight);
 			}
 		}
 	}
@@ -167,7 +191,6 @@
 	input[type="checkbox"] {
 		& + label {
 			&:before {
-				border-radius: _size(border-radius);
 			}
 		}
 	}
@@ -200,7 +223,7 @@
 		opacity: 1.0;
 	}
 
-	.polyfill-placeholder {
+	.formerize-placeholder {
 		color: _palette(fg-light) !important;
 		opacity: 1.0;
 	}

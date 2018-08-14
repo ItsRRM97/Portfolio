@@ -1,89 +1,181 @@
 ///
-/// Solid State by Pixelarity
+/// Forty by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
 
 /* Header */
 
+	@include keyframes('reveal-header') {
+		0% { top: -4em; opacity: 0; }
+		100% { top: 0; opacity: 1; }
+	}
+
 	#header {
-		@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');
-		background-color: transparentize(desaturate(lighten(_palette(bg), 3), 1.5), 0.05);
-		height: 3.5em;
+		@include vendor('display', 'flex');
+		background-color: _palette(bg-alt);
+		box-shadow: 0 0 0.25em 0 rgba(0,0,0,0.15);
+		cursor: default;
+		font-weight: _font(weight-bold);
+		height: 3.25em;
 		left: 0;
-		line-height: 3.5em;
-		padding: 0 1.25em;
+		letter-spacing: _font(letter-spacing-alt);
+		line-height: 3.25em;
+		margin: 0;
 		position: fixed;
+		text-transform: uppercase;
 		top: 0;
 		width: 100%;
 		z-index: _misc(z-index-base);
 
-		h1 {
-			@include vendor('transition', (
-				'opacity #{_duration(transition)} ease-in-out',
-				'visibility #{_duration(transition)}'
-			));
-			border-bottom: 0;
+		.logo {
+			border: 0;
+			display: inline-block;
 			font-size: 0.8em;
-			margin-bottom: 0;
-			opacity: 1;
-			visibility: visible;
+			height: inherit;
+			line-height: inherit;
+			padding: 0 1.5em;
 
-			a {
-				border: 0;
+			strong {
+				@include vendor('transition', (
+					'background-color #{_duration(transition)} ease-in-out',
+					'color #{_duration(transition)} ease-in-out'
+				));
+				background-color: _palette(fg-bold);
+				color: _palette(bg);
+				display: inline-block;
+				line-height: 1.65em;
+				margin-right: 0.325em;
+				padding: 0 0.125em 0 (_font(letter-spacing-alt) + 0.125em);
+			}
+
+			&:hover {
+				strong {
+					background-color: _palette(highlight);
+				}
+			}
+
+			&:active {
+				strong {
+					background-color: desaturate(darken(_palette(highlight), 15), 5);
+				}
 			}
 		}
 
 		nav {
-			font-family: _font(family-heading);
-			font-size: 0.8em;
-			font-weight: _font(weight-heading-bold);
-			height: 3em;
-			letter-spacing: _font(kern-heading);
-			line-height: 3em;
-			position: absolute;
-			right: 0.7em;
-			text-transform: uppercase;
-			top: 0.7em;
+			@include vendor('display', 'flex');
+			@include vendor('justify-content', 'flex-end');
+			@include vendor('flex-grow', '1');
+			height: inherit;
+			line-height: inherit;
 
 			a {
 				border: 0;
-				display: inline-block;
-				padding: 0 1em;
+				display: block;
+				font-size: 0.8em;
+				height: inherit;
+				line-height: inherit;
+				padding: 0 0.75em;
+				position: relative;
+				vertical-align: middle;
 
-				&:before {
-					float: right;
-					margin-left: 0.75em;
+				&:last-child {
+					padding-right: 1.5em;
 				}
 
 				&[href="#menu"] {
-					@include icon;
-					@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');
-					border-radius: _size(border-radius);
-					box-shadow: inset 0 0 0 2px _palette(border);
-					padding: 0 1.35em;
+					padding-right: 3.325em !important;
 
-					&:before {
-						content: '\f0c9';
+					&:before, &:after {
+						background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32" preserveAspectRatio="none"><style>line { stroke-width: 2px; stroke: #{_palette(fg-bold)}; }</style><line x1="0" y1="11" x2="24" y2="11" /><line x1="0" y1="21" x2="24" y2="21" /><line x1="0" y1="16" x2="24" y2="16" /></svg>');
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 24px 32px;
+						content: '';
+						display: block;
+						height: 100%;
+						position: absolute;
+						right: 1.5em;
+						top: 0;
+						vertical-align: middle;
+						width: 24px;
 					}
 
-					&:hover {
-						background-color: _palette(border-bg);
+					&:after {
+						@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+						background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32" preserveAspectRatio="none"><style>line { stroke-width: 2px; stroke: #{_palette(highlight)}; }</style><line x1="0" y1="11" x2="24" y2="11" /><line x1="0" y1="21" x2="24" y2="21" /><line x1="0" y1="16" x2="24" y2="16" /></svg>');
+						opacity: 0;
+						z-index: 1;
 					}
 
-					&:active {
-						background-color: _palette(border2-bg);
+					&:hover, &:active {
+						&:after {
+							opacity: 1;
+						}
+					}
+
+					&:last-child {
+						padding-right: 3.875em !important;
+
+						&:before, &:after {
+							right: 2em;
+						}
 					}
 				}
 			}
 		}
 
-		&.alt {
-			background-color: transparent;
+		&.reveal {
+			@include vendor('animation', 'reveal-header 0.35s ease');
+		}
 
-			h1 {
+		&.alt {
+			@include vendor('transition', 'opacity #{_duration(banner)} ease');
+			@include vendor('transition-delay', '0.75s');
+			@include vendor('animation', 'none');
+			background-color: transparent;
+			box-shadow: none;
+			position: absolute;
+
+			&.style1 { .logo { strong { color: _palette(accent1); } } }
+			&.style2 { .logo { strong { color: _palette(accent2); } } }
+			&.style3 { .logo { strong { color: _palette(accent3); } } }
+			&.style4 { .logo { strong { color: _palette(accent4); } } }
+			&.style5 { .logo { strong { color: _palette(accent5); } } }
+			&.style6 { .logo { strong { color: _palette(accent6); } } }
+		}
+
+		body.is-loading & {
+			&.alt {
 				opacity: 0;
-				visibility: hidden;
+			}
+		}
+
+		@include breakpoint(xlarge) {
+			nav {
+				a {
+					&[href="#menu"] {
+						padding-right: 3.75em !important;
+
+						&:last-child {
+							padding-right: 4.25em !important;
+						}
+					}
+				}
+			}
+		}
+
+		@include breakpoint(large) {
+			nav {
+				a {
+					&[href="#menu"] {
+						padding-right: 4em !important;
+
+						&:last-child {
+							padding-right: 4.5em !important;
+						}
+					}
+				}
 			}
 		}
 
@@ -91,23 +183,31 @@
 			height: 2.75em;
 			line-height: 2.75em;
 
-			nav {
-				top: 0;
-				right: 0;
-				height: inherit;
-				line-height: inherit;
+			.logo {
+				padding: 0 1em;
+			}
 
+			nav {
 				a {
-					height: inherit;
-					line-height: inherit;
+					padding: 0 0.5em;
+
+					&:last-child {
+						padding-right: 1em;
+					}
 
 					&[href="#menu"] {
-						box-shadow: none;
-						padding: 0 1em;
-						border-radius: 0;
+						padding-right: 3.25em !important;
 
-						&:hover, &:active {
-							background-color: inherit;
+						&:before, &:after {
+							right: 0.75em;
+						}
+
+						&:last-child {
+							padding-right: 4em !important;
+
+							&:before, &:after {
+								right: 1.5em;
+							}
 						}
 					}
 				}
@@ -115,23 +215,31 @@
 		}
 
 		@include breakpoint(xsmall) {
+			.logo {
+				span {
+					display: none;
+				}
+			}
+
 			nav {
 				a {
 					&[href="#menu"] {
-						width: 4em;
+						overflow: hidden;
+						padding-right: 0 !important;
+						text-indent: 5em;
 						white-space: nowrap;
-						text-indent: 4em;
-						position: relative;
+						width: 5em;
 
-						&:before {
+						&:before, &:after {
+							right: 0;
 							width: inherit;
-							position: absolute;
-							top: 0;
-							left: 0;
-							text-indent: 0;
-							text-align: right;
-							margin-left: 0;
-							padding-right: 1.25em;
+						}
+
+						&:last-child {
+							&:before, &:after {
+								width: 4em;
+								right: 0;
+							}
 						}
 					}
 				}

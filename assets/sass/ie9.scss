@@ -4,43 +4,105 @@
 @import 'libs/skel';
 
 /*
-	Solid State by Pixelarity
+	Forty by Pixelarity
 	pixelarity.com | hello@pixelarity.com
 	License: pixelarity.com/license
 */
 
-/* Basic */
+/* Spotlights */
 
-	body {
-		background-color:		_palette(bg);
-		background-image:		url('../../images/bg.jpg');
-		background-size:		cover;
-		background-attachment:	fixed;
-		background-position:	center;
+	.spotlights {
+		> section {
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
 
-		&:before {
-			background: transparentize(_palette(bg), 0.2);
-			content: '';
-			display: block;
-			height: 100%;
-			left: 0;
-			position: fixed;
-			top: 0;
-			width: 100%;
-		}
+			> .image {
+				float: left;
+			}
 
-		> * {
-			position: relative;
-			z-index: 1;
+			> .content {
+				float: left;
+			}
 		}
 	}
 
-/* Features */
+/* Tiles */
 
-	.features {
+	.tiles {
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
 		article {
-			display: inline-block;
-			width: 45%;
+			@include padding(8em, 4em);
+			float: left;
+			height: auto;
+			max-height: none;
+			min-height: 0;
+		}
+	}
+
+/* Header */
+
+	#header {
+		.logo {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		nav {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+
+/* Banner */
+
+	#banner {
+		@include padding(6em, 0, (1em, 0, 0, 0));
+		background-attachment: scroll;
+		height: auto;
+		max-height: none;
+		min-height: 0;
+
+		> .inner {
+			.content {
+				display: block;
+
+				> * {
+					margin-left: 0;
+					margin: 0 0 _size(element-margin) 0;
+				}
+			}
+		}
+
+		&.major {
+			height: auto;
+			max-height: none;
+			min-height: 0;
+		}
+	}
+
+/* Contact */
+
+	#contact {
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		> .inner {
+			> * {
+				float: left;
+			}
 		}
 	}
 
@@ -48,59 +110,6 @@
 
 	#menu {
 		.inner {
-			margin: 4em auto;
-		}
-	}
-
-/* Wrapper */
-
-	#wrapper {
-		> header {
-			background: none !important;
-		}
-	}
-
-	.wrapper {
-		&.spotlight {
-			.inner {
-				text-align: left !important;
-			}
-
-			.image {
-				display: inline-block;
-				margin: 0 _size(section-spacing, large) _size(element-margin) 0 !important;
-				vertical-align: middle;
-				width: 24%;
-			}
-
-			.content {
-				display: inline-block;
-				vertical-align: middle;
-				width: 70%;
-			}
-		}
-	}
-
-/* Banner */
-
-	#banner {
-		background: none !important;
-	}
-
-/* Footer */
-
-	#footer {
-		background: none !important;
-
-		.inner {
-			form {
-				display: inline-block;
-				width: 45%;
-			}
-
-			.contact {
-				display: inline-block;
-				width: 45%;
-			}
+			margin: 0 auto;
 		}
 	}
