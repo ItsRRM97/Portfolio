@@ -1,7 +1,7 @@
 /*
-	Forty by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
+	Roshan Raj Mishra
+	https://roshanraj.in | mishraroshanraj@gmail.com
+	Version: v3.1
 */
 
 (function($) {
