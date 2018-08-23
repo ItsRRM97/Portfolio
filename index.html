@@ -31,13 +31,13 @@
 					<nav id="menu">
 						<ul class="links">
 							<li><a href="index.html">Home</a></li>
-							<li><a href="landing.html">Landing</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="services.html">Services</a></li>
+							<li><a href="blogs.html">Blog</a></li>
 						</ul>
 						<ul class="actions vertical">
-							<li><a href="#" class="button special fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
+							<li><a href="contact.html" class="button special fit">Contact</a></li>
+							<li><a href="https://drive.google.com/open?id=13kahCZwatS8P6BBgcbcalT8LE3iG9fRB" class="button fit">View Resume</a></li>
 						</ul>
 					</nav>
 
@@ -102,10 +102,10 @@
 										<img src="images/pic04.gif" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="#contact" class="link">Get in Touch</a></h3>
+										<h3><a href="contact.html" class="link">Get in Touch</a></h3>
 										<p>Let us put my skills to use for you</p>
 										<br>
-										<a href="#contact" class="button next scrolly">Hire Me</a>
+										<a href="contact.html" class="button next scrolly">Hire Me</a>
 									</header>
 								</article>
 								<article>
@@ -174,14 +174,18 @@
 					<section id="contact">
 						<div class="inner">
 							<section>
-								<form method="post" action="#">
+									<header class="major">
+											<h2>Contact Me</h2>
+										</header>
+								<form method="POST" action="https://formspree.io/mishraroshanraj@gmail.com">
 									<div class="field half first">
 										<label for="name">Name</label>
 										<input type="text" name="name" id="name" />
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
+										<input type="email" name="_replyto" id="email" />
+										<input type="hidden" name="_subject" value="Contact Form Submission" />
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
@@ -190,6 +194,7 @@
 									<ul class="actions">
 										<li><input type="submit" value="Send Message" class="special" /></li>
 										<li><input type="reset" value="Clear" /></li>
+										<li><input type="hidden" name="_next" value="contact.html" /></li>
 									</ul>
 								</form>
 							</section>
