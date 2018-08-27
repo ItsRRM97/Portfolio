@@ -369,6 +369,8 @@ for (var i = 0; i < pathEls.length; i++) {
     autoplay: true
   });
 
+  /* Script for Particle JS */
+  
   particlesJS("particles-js", {
 	particles: {
 	  number: { value: 80, density: { enable: true, value_area: 800 } },
