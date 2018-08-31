@@ -4135,6 +4135,7 @@
 		   -------------------------------- */
 		   #timeline {
 			   background: black;
+			   background-image: url("../../images/about.gif");
 		   }
 		   #cd-timeline {
 			position: relative;
@@ -4148,7 +4149,7 @@
 			top: 0;
 			left: 25px;
 			height: 100%;
-			width: 4px;
+			width: 5px;
 			background: white;
 		  }
 		  @media only screen and (min-width: 1170px) {
@@ -4178,7 +4179,7 @@
 		  }
 		  @media only screen and (min-width: 1170px) {
 			.cd-timeline-block {
-			  margin: 4em 0;
+			  margin: 1em 0;
 			}
 			.cd-timeline-block:first-child {
 			  margin-top: 0;
@@ -4197,7 +4198,7 @@
 			box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 		  }
 		  .cd-timeline-img {
-			background: black;
+			background: white;
 		  }
 		  @media only screen and (min-width: 1170px) {
 			.cd-timeline-img {
