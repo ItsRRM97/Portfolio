@@ -4574,6 +4574,14 @@ ul.pennants li {
 	vertical-align: top;
 }
 
+ul.pennants-alt li {
+	display: inline-block;
+	width: 48%;
+	align-content: center;
+	padding: 3em;
+	vertical-align: top;
+}
+
 .pennant {
 	-moz-transition: background-color 0.25s ease-in-out;
 	-webkit-transition: background-color 0.25s ease-in-out;
@@ -4627,10 +4635,20 @@ ul.pennants li {
 		max-width: 100%;
 		padding: 1em 2em;
 	}
+
+	ul.pennants-alt li {
+		width: 48%;
+		max-width: 100%;
+		padding: 1em 2em;
+	}
 }
 
 @media screen and (max-width: 736px) {
 	ul.pennants li {
+		width: 100%;
+		padding: 0.5em 0;
+	}
+	ul.pennants-alt li {
 		width: 100%;
 		padding: 0.5em 0;
 	}
