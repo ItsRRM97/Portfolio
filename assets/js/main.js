@@ -452,8 +452,7 @@ $( ".img-wrapper" ).hover(
 
   //when the launch butto is clicked
   $launchButton.click(function() {
-	var $currentUrl = ("a.projectUrl").attr("href");
-	console.log($currentUrl);
+	var $currentUrl = $("a.projectUrl").attr("href");
 	window.open($currentUrl, '_blank');
   })
 
