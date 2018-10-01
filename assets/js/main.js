@@ -474,4 +474,26 @@ for (var i = 0; i < pathEls.length; i++) {
 		autoplay: true
 	});
 
+	var preloader;
+
+function preload(opacity) {
+    if(opacity <= 0) {
+        showContent();
+    }
+    else {
+        preloader.style.opacity = opacity;
+        window.setTimeout(function() { preload(opacity - 0.01) }, 40);
+    }
+}
+
+function showContent() {
+    preloader.style.display = 'none';
+    document.getElementById('wrapper').style.display = 'block';
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    preloader = document.getElementById('preloader');
+    preload(1);
+});
+
 }

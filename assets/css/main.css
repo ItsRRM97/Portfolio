@@ -1788,7 +1788,7 @@ body {
 }
 
 body {
-	background: #242943;
+	background: #232323;
 }
 
 body.is-loading *,
@@ -5671,4 +5671,16 @@ ul.pennants-alt li {
 	  font-size: 3em;
 	}
   }
-  
+
+  #preloader {
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    overflow: visible;
+    background: url('../../images/r-reach.gif') no-repeat center center;
+ }
+
+ #wrapper {
+	 display : none;
+ }
