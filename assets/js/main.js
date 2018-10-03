@@ -473,7 +473,7 @@ for (var i = 0; i < pathEls.length; i++) {
 		easing: 'easeInOutSine',
 		autoplay: true
 	});
-
+//Preloader JS
 	var preloader;
 
 function preload(opacity) {
