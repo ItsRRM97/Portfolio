@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.roshanraj.in/</loc>
+  <lastmod>2018-09-20T08:26:18+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/index.html</loc>
+  <lastmod>2018-09-20T08:26:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/about.html</loc>
+  <lastmod>2018-09-20T08:28:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/services.html</loc>
+  <lastmod>2018-10-01T03:24:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/blogs.html</loc>
+  <lastmod>2018-09-20T08:43:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/contact.html</loc>
+  <lastmod>2018-09-20T08:21:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/work.html</loc>
+  <lastmod>2018-10-01T03:26:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/blogs/are-you-a-programmer.html</loc>
+  <lastmod>2018-09-08T13:35:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/blogs/my-tribute-to-chester-bennington.html</loc>
+  <lastmod>2018-09-07T20:28:56+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/blogs/what-is-wrong-with-indian-education-system.html</loc>
+  <lastmod>2018-09-07T20:29:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/blogs/what-makes-you-sad-about-indians.html</loc>
+  <lastmod>2018-09-07T20:55:56+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.roshanraj.in/blogs/tiger-zinda-hai-logic-explained.html</loc>
+  <lastmod>2018-09-07T21:10:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
