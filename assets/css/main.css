@@ -5672,15 +5672,27 @@ ul.pennants-alt li {
 	}
   }
 
-  #preloader {
+  .loader {
+	background: none no-repeat scroll 0 0 #232323;
 	position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    overflow: visible;
-    background: url('../../images/r-reach.gif') no-repeat center center;
- }
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999; 
+}
 
- #wrapper {
-	display : none;
- }
+.loader .loader_inner {
+	background-image: url("../../images/r-reach.gif");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #232323;
+	height: 100%;
+	width: 100%;
+	margin-top: -30px;
+	margin-left: -30px;
+	position: absolute; 
+}
