@@ -396,6 +396,9 @@ $( ".img-wrapper" ).hover(
 	$image.attr("src", imageLocation);
 	// Fade in the overlay
 	$overlay.fadeIn("slow");
+	console.log(this);
+	$url=this.getAttribute("href");
+	console.log($url);
   });
   
   // When the overlay is clicked
@@ -452,8 +455,8 @@ $( ".img-wrapper" ).hover(
 
   //when the launch butto is clicked
   $launchButton.click(function() {
-	var $currentUrl = $("a.projectUrl").attr("href");
-	window.open($currentUrl, '_blank');
+	//var $currentUrl = $("a.projectUrl").attr("href");
+	window.open($url, '_blank');
   });
 
   $(window).load(function() {
