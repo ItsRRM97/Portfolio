@@ -5693,7 +5693,7 @@ ul.pennants-alt li {
 	height: 100%;
 	width: 100%;
 	margin-top: -30px;
-	margin-left: -30px;
+	/* margin-left: -30px; */
 	position: absolute; 
 }
 
